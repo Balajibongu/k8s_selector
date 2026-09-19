@@ -10,22 +10,21 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-        purpose: tolerations-demo
-        project: roboshop
+      purpose: tolerations-demo
+      project: roboshop
   template:
     metadata:
       labels:
         purpose: tolerations-demo
         project: roboshop
-  spec:
-    containers:
-    - name: nginx
-      image: nginx
-    nodeSelector:
+    spec:
+      containers:
+      - name: nginx
+        image: nginx
+      nodeSelector:
         kubernetes.io/hostname: ip-192-168-2-134.ec2.internal
-    toleration:
-      key: key1
-      operator: equal
-      value: value1
-      effect: NoSchedule
-  
+      tolerations:
+      - key: "key1"
+        operator: "Equal"
+        value: "value1"
+        effect: "NoSchedule"
