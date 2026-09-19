@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-toleration
+  namespace: roboshop
+  labels:
+    purpose: tolerations-demo
+    project: roboshop
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+        purpose: tolerations-demo
+        project: roboshop
+  template:
+    metadata:
+      labels:
+        purpose: tolerations-demo
+        project: roboshop
+  spec:
+    containers:
+    - name: nginx
+      image: nginx
+    nodeSelector:
+        kubernetes.io/hostname: ip-192-168-2-134.ec2.internal
+    toleration:
+      key: key1
+      operator: equal
+      value: value1
+      effect: NoSchedule
+  
