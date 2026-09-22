@@ -26,7 +26,7 @@ spec:
           requiredDuringSchedulingIgnoredDuringExecution:
             nodeSelectorTerms:
             - matchExpressions:
-              - key: node
+              - key: node1
                 operator: In
                 values: 
-                - one
+                - two
