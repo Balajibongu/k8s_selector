@@ -22,7 +22,7 @@ spec:
       - name: nginx
         image: nginx
       affinity:
-        nodeAffinity:
+        podAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
             - labelSelector:
                 matchExpressions:
