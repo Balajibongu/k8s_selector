@@ -24,7 +24,8 @@ spec:
       affinity:
         nodeAffinity:
           preferredDuringSchedulingIgnoredDuringExecution:
-            nodeSelectorTerms:
+          - weight: 100
+            preference:
             - matchExpressions:
               - key: node1
                 operator: In
