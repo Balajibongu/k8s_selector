@@ -24,8 +24,9 @@ spec:
       affinity:
         nodeAntiAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
-            - matchExpressions:
-              - key: node1
-                operator: In
-                values: 
-                - four
+            nodeSelectorTerms:
+              - matchExpressions:
+                - key: node1
+                  operator: In
+                  values: 
+                  - four
