@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: node-affinity
   namespace: roboshop
-  label:
+  labels:
     name: roboshop
     env: development
 spec:
@@ -14,7 +14,7 @@ spec:
       env: development
   template:
     metadata:
-      label:
+      labels:
         name: roboshop
         env: development
     spec:
