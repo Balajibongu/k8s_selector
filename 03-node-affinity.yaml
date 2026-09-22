@@ -26,7 +26,7 @@ spec:
           preferredDuringSchedulingIgnoredDuringExecution:
           - weight: 100
             preference:
-            - matchExpressions:
+              matchExpressions:
               - key: node1
                 operator: In
                 values: 
