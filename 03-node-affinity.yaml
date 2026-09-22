@@ -30,4 +30,4 @@ spec:
               - key: node1
                 operator: In
                 values: 
-                - four
+                - three
