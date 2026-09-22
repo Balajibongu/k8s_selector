@@ -22,11 +22,11 @@ spec:
       - name: nginx
         image: nginx
       affinity:
-        nodeAntiAffinity:
+        nodeAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
             nodeSelectorTerms:
               - matchExpressions:
                 - key: node1
-                  operator: In
+                  operator: NotIn
                   values: 
                   - four
