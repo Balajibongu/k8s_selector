@@ -26,10 +26,10 @@ spec:
           requiredDuringSchedulingIgnoredDuringExecution:
             nodeSelectorTerms:
               - matchExpressions:
-                - key: node1
+                - key: topology.kubernetes.io/zone
                   operator: NotIn
                   values: 
-                  - four
+                  - us-east-1c
           preferredDuringSchedulingIgnoredDuringExecution:
             - weight: 100
               preference:
@@ -37,4 +37,4 @@ spec:
                 - key: topology.kubernetes.io/zone
                   operator: NotIn
                   values: 
-                  - us-east-1b 
+                  - us-east-1b
