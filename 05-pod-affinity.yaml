@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-affinity
+  namespace: roboshop
+  labels:
+    name: roboshop
+    env: development
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: roboshop
+      env: development
+  template:
+    metadata:
+      labels:
+        name: roboshop
+        env: development
+    spec:
+      containers:
+      - name: nginx
+        image: nginx
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            - labelSelector:
+                matchExpressions:
+                - key: name
+                  operator: In
+                  values:
+                  - roboshop
