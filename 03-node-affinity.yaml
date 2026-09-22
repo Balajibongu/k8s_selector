@@ -23,11 +23,18 @@ spec:
         image: nginx
       affinity:
         nodeAffinity:
-          preferredDuringSchedulingIgnoredDuringExecution:
-          - weight: 100
-            preference:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
               matchExpressions:
               - key: node1
                 operator: In
                 values: 
-                - three
+                - four
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 100
+            preference:
+              matchExpressions:
+              - key: user
+                operator: In
+                values: 
+                - balaji
